@@ -40,6 +40,43 @@ The original `chaindata-v9.json` (12.8 MB, 1 713 networks, 23 829 tokens) contai
 | USDC default chains                  |    7 (ETH, ARB, OP, Base, BSC, Polygon, Etherlink) |
 | USDT default chains                  | 7 (ETH, OP, Polygon, Astar, Bifrost, Hydration ×2) |
 
+## Default networks (20)
+
+### Polkadot ecosystem (11)
+
+| Network            | ID                   |
+| ------------------ | -------------------- |
+| Polkadot           | `polkadot`           |
+| Kusama             | `kusama`             |
+| Polkadot Asset Hub | `polkadot-asset-hub` |
+| Moonbeam           | `moonbeam`           |
+| Moonriver          | `moonriver`          |
+| Astar              | `astar`              |
+| Acala              | `acala`              |
+| Bifrost Polkadot   | `bifrost-polkadot`   |
+| Hydration          | `hydradx`            |
+| Mythos             | `mythos`             |
+| Bittensor          | `bittensor`          |
+
+### EVM (8)
+
+| Network             | ID      |
+| ------------------- | ------- |
+| Ethereum Mainnet    | `1`     |
+| Optimism            | `10`    |
+| Binance Smart Chain | `56`    |
+| Polygon             | `137`   |
+| Arbitrum One        | `42161` |
+| Base                | `8453`  |
+| Sonic Mainnet       | `146`   |
+| Bittensor EVM       | `964`   |
+
+### Solana (1)
+
+| Network        | ID               |
+| -------------- | ---------------- |
+| Solana Mainnet | `solana-mainnet` |
+
 ## Scripts
 
 All processing scripts live in `scripts/`:
