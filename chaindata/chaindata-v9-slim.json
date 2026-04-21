@@ -6453,6 +6453,232 @@
         "https://svm.merkle.io/pk_mbs_1412a7392bd47753ca2b4bb3d123f6a1",
         "https://solana-mainnet.g.alchemy.com/v2/FlflUnY6iZ98J9likA0ZdLSMfa6SqMya"
       ]
+    },
+    {
+      "id": "peaq",
+      "isDefault": false,
+      "name": "Peaq",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/peaq.svg",
+      "nativeTokenId": "peaq:substrate-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "PEAQ",
+        "name": "PEAQ",
+        "coingeckoId": "peaq-2",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/peaq-2.webp"
+      },
+      "themeColor": "#ffffff",
+      "blockExplorerUrls": [
+        "https://peaq.subscan.io/"
+      ],
+      "genesisHash": "0xd2a5d385932d1f650dae03ef8e2748983779ee342c614f80854d32b8cd8fa48c",
+      "platform": "polkadot",
+      "chainName": "peaq-network",
+      "specName": "peaq-node",
+      "specVersion": 110,
+      "account": "*25519",
+      "chainspecQrUrl": "https://metadata.novasama.io/qr/polkadot-peaq-node_specs.png",
+      "latestMetadataQrUrl": "https://metadata.novasama.io/qr/polkadot-peaq-node_metadata_latest.apng",
+      "prefix": 42,
+      "oldPrefix": 42,
+      "rpcs": [
+        "wss://peaq-rpc.publicnode.com",
+        "wss://peaq.api.onfinality.io/public-ws"
+      ],
+      "hasCheckMetadataHash": true,
+      "topology": {
+        "type": "parachain",
+        "relayId": "polkadot",
+        "paraId": 3338
+      }
+    },
+    {
+      "id": "sora-standalone",
+      "isDefault": false,
+      "name": "Sora Standalone",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/sora-standalone.svg",
+      "nativeTokenId": "sora-standalone:substrate-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "XOR",
+        "name": "XOR",
+        "coingeckoId": "sora",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/sora.webp"
+      },
+      "themeColor": "#fd0100",
+      "blockExplorerUrls": [
+        "https://sora.subscan.io/"
+      ],
+      "genesisHash": "0x7e4e32d0feafd4f9c9414b0be86373f9a1efa904809b683453a9af6856d38ad5",
+      "platform": "polkadot",
+      "chainName": "SORA",
+      "specName": "sora-substrate",
+      "specVersion": 119,
+      "account": "*25519",
+      "prefix": 69,
+      "rpcs": [
+        "wss://ws.mof.sora.org",
+        "wss://mof2.sora.org"
+      ],
+      "topology": {
+        "type": "standalone"
+      }
+    },
+    {
+      "id": "tanssi",
+      "isDefault": false,
+      "name": "Tanssi",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/tanssi.svg",
+      "nativeTokenId": "tanssi:substrate-native",
+      "nativeCurrency": {
+        "decimals": 12,
+        "symbol": "TANSSI",
+        "name": "TANSSI"
+      },
+      "themeColor": "#149b9b",
+      "blockExplorerUrls": [
+        "https://tanssi.subscan.io/"
+      ],
+      "genesisHash": "0xdd6d086f75ec041b66e20c4186d327b23c8af244c534a2418de6574e8c041a60",
+      "platform": "polkadot",
+      "chainName": "Tanssi",
+      "specName": "starlight",
+      "specVersion": 1600,
+      "account": "*25519",
+      "prefix": 42,
+      "rpcs": [
+        "wss://services.tanssi-mainnet.network/tanssi"
+      ],
+      "hasCheckMetadataHash": true,
+      "topology": {
+        "type": "relay"
+      }
+    },
+    {
+      "id": "81457",
+      "name": "Blast",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/81457.webp",
+      "nativeTokenId": "81457:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "ETH",
+        "name": "Ether",
+        "coingeckoId": "ethereum",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg"
+      },
+      "themeColor": "#fcfe05",
+      "blockExplorerUrls": [],
+      "platform": "ethereum",
+      "rpcs": [
+        "https://blast-rpc.publicnode.com",
+        "https://blast.drpc.org",
+        "https://blast.api.pocket.network",
+        "https://blast-public.nodies.app",
+        "https://rpc.sentio.xyz/blast-mainnet"
+      ],
+      "contracts": {
+        "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
+      },
+      "isDefault": false
+    },
+    {
+      "id": "999",
+      "name": "HyperEVM",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/999.webp",
+      "nativeTokenId": "999:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "HYPE",
+        "name": "Hyperliquid",
+        "coingeckoId": "hyperliquid",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hyperliquid.webp"
+      },
+      "themeColor": "#ffffff",
+      "blockExplorerUrls": [
+        "https://hyperevmscan.io/",
+        "https://purrsec.com/",
+        "https://www.hyperscan.com/"
+      ],
+      "platform": "ethereum",
+      "rpcs": [
+        "https://rpc.hyperliquid.xyz/evm",
+        "https://hyperliquid.drpc.org",
+        "https://rpc.hyperlend.finance",
+        "https://rpc.hypurrscan.io"
+      ],
+      "contracts": {
+        "Multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11"
+      },
+      "isDefault": false
+    },
+    {
+      "id": "5234",
+      "name": "Humanode Mainnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/5234.webp",
+      "nativeTokenId": "5234:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "eHMND",
+        "name": "eHMND",
+        "coingeckoId": "humanode",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/humanode.webp"
+      },
+      "themeColor": "#fd6351",
+      "blockExplorerUrls": [],
+      "platform": "ethereum",
+      "rpcs": [
+        "https://explorer-rpc-http.mainnet.stages.humanode.io"
+      ],
+      "contracts": {
+        "Multicall3": "0xca11bde05977b3631167028862be2a173976ca11"
+      },
+      "isDefault": false
+    },
+    {
+      "id": "9745",
+      "name": "Plasma Mainnet",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/9745.webp",
+      "nativeTokenId": "9745:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "XPL",
+        "name": "Plasma",
+        "coingeckoId": "plasma",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/plasma.webp"
+      },
+      "themeColor": "#686e6e",
+      "blockExplorerUrls": [
+        "https://plasmascan.to"
+      ],
+      "platform": "ethereum",
+      "rpcs": [
+        "https://plasma.drpc.org",
+        "https://plasma.api.onfinality.io/public",
+        "https://rpc.plasma.to"
+      ],
+      "isDefault": false
+    },
+    {
+      "id": "1408",
+      "name": "VFlow",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/known/ethereum.webp",
+      "nativeTokenId": "1408:evm-native",
+      "nativeCurrency": {
+        "decimals": 18,
+        "symbol": "VFY",
+        "name": "zkVerify",
+        "coingeckoId": "zkverify",
+        "mirrorOf": "vflow:substrate-native",
+        "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zkverify.webp"
+      },
+      "themeColor": "#ffffff",
+      "blockExplorerUrls": [],
+      "platform": "ethereum",
+      "substrateChainId": "vflow",
+      "rpcs": [
+        "https://vflow-rpc.zkverify.io"
+      ],
+      "isDefault": false
     }
   ],
   "tokens": [
@@ -11157,6 +11383,44 @@
       "coingeckoId": "solana",
       "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/solana.webp",
       "isDefault": true
+    },
+    {
+      "id": "peaq:substrate-native",
+      "platform": "polkadot",
+      "networkId": "peaq",
+      "type": "substrate-native",
+      "symbol": "PEAQ",
+      "decimals": 18,
+      "name": "peaq",
+      "coingeckoId": "peaq-2",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/peaq-2.webp",
+      "isDefault": true,
+      "existentialDeposit": "0"
+    },
+    {
+      "id": "sora-standalone:substrate-native",
+      "platform": "polkadot",
+      "networkId": "sora-standalone",
+      "type": "substrate-native",
+      "symbol": "XOR",
+      "decimals": 18,
+      "name": "Sora",
+      "coingeckoId": "sora",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/sora.webp",
+      "isDefault": true,
+      "existentialDeposit": "0"
+    },
+    {
+      "id": "tanssi:substrate-native",
+      "platform": "polkadot",
+      "networkId": "tanssi",
+      "type": "substrate-native",
+      "symbol": "TANSSI",
+      "decimals": 12,
+      "name": "TANSSI",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/chains/tanssi.svg",
+      "isDefault": true,
+      "existentialDeposit": "33333333"
     },
     {
       "id": "1:evm-erc20:0x00f3c42833c3170159af4e92dbb451fb3f708917",
@@ -18973,143 +19237,65 @@
       "existentialDeposit": "90744101633"
     },
     {
-      "id": "hydradx:substrate-hydration:1000624",
-      "platform": "polkadot",
-      "networkId": "hydradx",
-      "type": "substrate-hydration",
-      "symbol": "AAVE",
+      "id": "81457:evm-native",
+      "platform": "ethereum",
+      "networkId": "81457",
+      "type": "evm-native",
+      "symbol": "ETH",
       "decimals": 18,
-      "name": "Aave",
-      "coingeckoId": "aave",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/aave.webp",
-      "isDefault": true,
-      "onChainId": 1000624,
-      "assetType": "Token",
-      "isSufficient": true,
-      "existentialDeposit": "59084194977843"
+      "name": "Ether",
+      "coingeckoId": "ethereum",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/eth.svg",
+      "isDefault": true
     },
     {
-      "id": "hydradx:substrate-hydration:1000765",
-      "platform": "polkadot",
-      "networkId": "hydradx",
-      "type": "substrate-hydration",
-      "symbol": "tBTC",
+      "id": "999:evm-native",
+      "platform": "ethereum",
+      "networkId": "999",
+      "type": "evm-native",
+      "symbol": "HYPE",
       "decimals": 18,
-      "name": "Threshold BTC",
-      "coingeckoId": "tbtc",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/tbtc.webp",
-      "isDefault": true,
-      "onChainId": 1000765,
-      "assetType": "Token",
-      "isSufficient": true,
-      "existentialDeposit": "106803374987"
-    },
-    {
-      "id": "hydradx:substrate-hydration:1000767",
-      "platform": "polkadot",
-      "networkId": "hydradx",
-      "type": "substrate-hydration",
-      "symbol": "USDT",
-      "decimals": 6,
-      "name": "Tether (Ethereum native)",
-      "coingeckoId": "tether",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/tether.webp",
-      "isDefault": true,
-      "onChainId": 1000767,
-      "assetType": "Token",
-      "isSufficient": true,
-      "existentialDeposit": "10000"
-    },
-    {
-      "id": "1:evm-erc20:0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
-      "platform": "ethereum",
-      "networkId": "1",
-      "type": "evm-erc20",
-      "symbol": "USDC",
-      "decimals": 6,
-      "name": "USD Coin",
-      "coingeckoId": "usd-coin",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd-coin.webp",
-      "contractAddress": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "name": "Hyperliquid",
+      "coingeckoId": "hyperliquid",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/hyperliquid.webp",
       "isDefault": true
     },
     {
-      "id": "1:evm-erc20:0xd31a59c85ae9d8edefec411d448f90841571b89c",
+      "id": "5234:evm-native",
       "platform": "ethereum",
-      "networkId": "1",
-      "type": "evm-erc20",
-      "symbol": "SOL",
-      "decimals": 9,
-      "name": "Wrapped SOL",
-      "coingeckoId": "sol-wormhole",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/sol-wormhole.webp",
-      "contractAddress": "0xd31a59c85ae9d8edefec411d448f90841571b89c",
-      "isDefault": true
-    },
-    {
-      "id": "42161:evm-erc20:0xaf88d065e77c8cc2239327c5edb3a432268e5831",
-      "platform": "ethereum",
-      "networkId": "42161",
-      "type": "evm-erc20",
-      "symbol": "USDC",
-      "decimals": 6,
-      "name": "USD Coin",
-      "coingeckoId": "usd-coin",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd-coin.webp",
-      "contractAddress": "0xaf88d065e77c8cc2239327c5edb3a432268e5831",
-      "isDefault": true
-    },
-    {
-      "id": "10:evm-erc20:0x0b2c639c533813f4aa9d7837caf62653d097ff85",
-      "platform": "ethereum",
-      "networkId": "10",
-      "type": "evm-erc20",
-      "symbol": "USDC",
-      "decimals": 6,
-      "name": "USD Coin",
-      "coingeckoId": "usd-coin",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd-coin.webp",
-      "contractAddress": "0x0b2c639c533813f4aa9d7837caf62653d097ff85",
-      "isDefault": true
-    },
-    {
-      "id": "8453:evm-erc20:0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
-      "platform": "ethereum",
-      "networkId": "8453",
-      "type": "evm-erc20",
-      "symbol": "USDC",
-      "decimals": 6,
-      "name": "USD Coin",
-      "coingeckoId": "usd-coin",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd-coin.webp",
-      "contractAddress": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
-      "isDefault": true
-    },
-    {
-      "id": "56:evm-erc20:0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
-      "platform": "ethereum",
-      "networkId": "56",
-      "type": "evm-erc20",
-      "symbol": "USDC",
+      "networkId": "5234",
+      "type": "evm-native",
+      "symbol": "eHMND",
       "decimals": 18,
-      "name": "Binance-Peg USD Coin",
-      "coingeckoId": "usd-coin",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd-coin.webp",
-      "contractAddress": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+      "name": "eHMND",
+      "coingeckoId": "humanode",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/humanode.webp",
       "isDefault": true
     },
     {
-      "id": "137:evm-erc20:0x3c499c542cef5e3811e1192ce70d8cc03d5c3359",
+      "id": "9745:evm-native",
       "platform": "ethereum",
-      "networkId": "137",
-      "type": "evm-erc20",
-      "symbol": "USDC",
-      "decimals": 6,
-      "name": "USD Coin",
-      "coingeckoId": "usd-coin",
-      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/usd-coin.webp",
-      "contractAddress": "0x3c499c542cef5e3811e1192ce70d8cc03d5c3359",
+      "networkId": "9745",
+      "type": "evm-native",
+      "symbol": "XPL",
+      "decimals": 18,
+      "name": "Plasma",
+      "coingeckoId": "plasma",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/plasma.webp",
       "isDefault": true
+    },
+    {
+      "id": "1408:evm-native",
+      "platform": "ethereum",
+      "networkId": "1408",
+      "type": "evm-native",
+      "symbol": "VFY",
+      "decimals": 18,
+      "name": "zkVerify",
+      "coingeckoId": "zkverify",
+      "logo": "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/assets/tokens/coingecko/zkverify.webp",
+      "isDefault": true,
+      "mirrorOf": "vflow:substrate-native"
     }
   ],
   "miniMetadatas": [
