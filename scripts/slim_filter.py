@@ -25,7 +25,7 @@ tier1_networks = {
     'Ethereum Mainnet', 'Optimism', 'Binance Smart Chain', 'Polygon',
     'Arbitrum One', 'Avalanche C-Chain', 'Base', 'zkSync Mainnet',
     'Gnosis', 'Fantom Opera', 'Cronos Mainnet', 'Scroll', 'Linea',
-    'Mantle', 'Blast Mainnet', 'Manta Pacific Mainnet', 'Sonic Mainnet',
+    'Mantle', 'Blast', 'Manta Pacific Mainnet', 'Sonic Mainnet',
     'PulseChain', 'opBNB Mainnet', 'Polygon zkEVM', 'Celo Mainnet',
     'Hedera Mainnet', 'Filecoin - Mainnet', 'Ronin', 'Immutable zkEVM',
     'NEAR Protocol', 'Kaia Mainnet', 'Chiliz Chain', 'Berachain',
@@ -33,6 +33,8 @@ tier1_networks = {
     # Polkadot major
     'Polkadot', 'Kusama', 'Moonbeam', 'Moonriver', 'Acala',
     'Astar', 'Hydration', 'Bifrost Polkadot', 'Mythos',
+    # Additional EVM
+    'HyperEVM',
 }
 
 # Tier 2: Active chains with moderate activity/TVL
@@ -55,7 +57,7 @@ tier2_networks = {
     'Neon EVM Mainnet', 'Metal L2', 'Swellchain', 'Plume Mainnet',
     'Kinto Mainnet', 'Gravity Alpha Mainnet', 'Redstone',
     'Corn', 'RARI Chain', 'Reya Network', 'Zircuit Mainnet',
-    'peaq', 'AIOZ Network', 'Lightlink Phoenix Mainnet', 'ZKFair Mainnet',
+    'AIOZ Network', 'Lightlink Phoenix Mainnet', 'ZKFair Mainnet',
     'Kroma', 'ShimmerEVM', 'Bahamut', 'Etherlink Mainnet',
     'Cyber Mainnet', 'Superseed', 'Polynomial', 'Orderly Mainnet',
     'Neo X Mainnet', 'Hemi', 'Sophon', 'Superposition',
@@ -73,16 +75,18 @@ tier2_networks = {
     'Kusama Bridge Hub', 'Polkadot Collectives', 'Polkadot Coretime',
     'Polkadot People', 'Kusama Coretime', 'Kusama People',
     'Manta', 'Crust', 'Robonomics Kusama', 'Robonomics Polkadot',
-    'Karura', 'Kabocha', 'Kreivo', 'Sora', 'Encointer',
+    'Karura', 'Kabocha', 'Kreivo', 'Encointer',
     'Enjin Matrix', 'Enjin', 'Energy Web X', 'Polymesh',
     'Amplitude', 'Altair', 'Torus', 'Crust Shadow',
-    'Humanode', 'Analog Timechain', 'Chainflip', 'ChainX',
+    'Humanode Mainnet', 'Analog Timechain', 'Chainflip', 'ChainX',
     'Bittensor', 'Cere', 'Liberland', 'XX Network',
     'Acurast', 'Acurast Canary', 'Allfeat',
     'Joystream', 'DAO IPCI', 'Zeitgeist', 'Xode',
-    'Hyperbridge', 'Kintsugi', 'Basilisk',
+    'Hyperbridge', 'Kintsugi', 'Basilisk', 'Tanssi',
     'CC Enterprise', 'Creditcoin', 'Curio', 'Elysium',
     'Hydration EVM',
+    'Peaq', 'Sora Standalone',
+    'Plasma Mainnet', 'VFlow',
 }
 
 keep_names = tier1_networks | tier2_networks

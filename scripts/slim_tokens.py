@@ -47,7 +47,7 @@ TOP_COINGECKO_IDS = {
     "trust-wallet", "sonic", "convex-finance",
     # 201-300
     "gala", "enjin-coin", "jito", "zksync", "basic-attention",
-    "safepal", "stasis-euro", "arweave", "thorchain", "ecash",
+    "safepal", "stasis-euro", "arweave", "thorchain", "tbtc", "ecash",
     "immutable", "origintrail", "vaulta", "golem",
     "eigencloud-prev-eigenlayer", "1inch", "sosovalue",
     "centrifuge", "multiversx", "aethir", "akash-network", "0g",
