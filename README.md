@@ -81,17 +81,18 @@ The original `chaindata-v9.json` (12.8 MB, 1 713 networks, 23 829 tokens) contai
 
 All processing scripts live in `scripts/`:
 
-| Script            | Purpose                                                                             |
-| ----------------- | ----------------------------------------------------------------------------------- |
-| `slim_filter.py`  | Stage 1 — removes testnets and irrelevant mainnets, filters tokens to kept networks |
-| `slim_tokens.py`  | Stage 2 — reduces tokens to max 1 000 by market-cap priority                        |
-| `fix_defaults.py` | Stage 3 — curates `isDefault` flags and injects 10 missing critical tokens          |
-| `minify.py`       | Generates `chaindata-v9-slim.min.json` (whitespace-stripped)                         |
+| Script               | Purpose                                                                             |
+| -------------------- | ----------------------------------------------------------------------------------- |
+| `fetch_chaindata.py` | Stage 0 — downloads the latest `chaindata-v9.json` from upstream                    |
+| `slim_filter.py`     | Stage 1 — removes testnets and irrelevant mainnets, filters tokens to kept networks |
+| `slim_tokens.py`     | Stage 2 — reduces tokens to max 1 000 by market-cap priority                        |
+| `fix_defaults.py`    | Stage 3 — curates `isDefault` flags and injects 10 missing critical tokens          |
+| `minify.py`          | Generates `chaindata-v9-slim.min.json` (whitespace-stripped)                         |
 
 Run the full pipeline:
 
 ```sh
-python3 scripts/slim_filter.py && python3 scripts/slim_tokens.py && python3 scripts/fix_defaults.py && python3 scripts/minify.py
+python3 scripts/fetch_chaindata.py && python3 scripts/slim_filter.py && python3 scripts/slim_tokens.py && python3 scripts/fix_defaults.py && python3 scripts/minify.py
 ```
 
 The pipeline is idempotent — re-running it from a clean `chaindata-v9.json` always produces the same output.
