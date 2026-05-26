@@ -30,15 +30,15 @@ The original `chaindata-v9.json` (12.8 MB, 1 713 networks, 23 829 tokens) contai
 
 ### Slim breakdown
 
-| Category                             |                                              Count |
-| ------------------------------------ | -------------------------------------------------: |
-| Total networks                       |                                                232 |
-| Total tokens                         |                                              1 010 |
-| Bittensor tokens (subnets + wrapped) |                                                149 |
-| Native tokens                        |                                                232 |
-| Top market-cap tokens                |                                                629 |
-| USDC default chains                  |    7 (ETH, ARB, OP, Base, BSC, Polygon, Etherlink) |
-| USDT default chains                  |                    5 (ETH, OP, Polygon, Astar, Hydration) |
+| Category                             |                                           Count |
+| ------------------------------------ | ----------------------------------------------: |
+| Total networks                       |                                             232 |
+| Total tokens                         |                                           1 010 |
+| Bittensor tokens (subnets + wrapped) |                                             149 |
+| Native tokens                        |                                             232 |
+| Top market-cap tokens                |                                             629 |
+| USDC default chains                  | 7 (ETH, ARB, OP, Base, BSC, Polygon, Etherlink) |
+| USDT default chains                  |          5 (ETH, OP, Polygon, Astar, Hydration) |
 
 ## Default networks (20)
 
@@ -81,18 +81,25 @@ The original `chaindata-v9.json` (12.8 MB, 1 713 networks, 23 829 tokens) contai
 
 All processing scripts live in `scripts/`:
 
-| Script               | Purpose                                                                             |
-| -------------------- | ----------------------------------------------------------------------------------- |
-| `fetch_chaindata.py` | Stage 0 — downloads the latest `chaindata-v9.json` from upstream                    |
-| `slim_filter.py`     | Stage 1 — removes testnets and irrelevant mainnets, filters tokens to kept networks |
-| `slim_tokens.py`     | Stage 2 — reduces tokens to max 1 000 by market-cap priority                        |
-| `fix_defaults.py`    | Stage 3 — curates `isDefault` flags and injects 10 missing critical tokens          |
-| `minify.py`          | Generates `chaindata-v9-slim.min.json` (whitespace-stripped)                         |
+| Script               | Purpose                                                                                |
+| -------------------- | -------------------------------------------------------------------------------------- |
+| `fetch_chaindata.py` | Stage 0 — downloads the latest `chaindata-v9.json` from upstream                       |
+| `slim_filter.py`     | Stage 1 — removes testnets and irrelevant mainnets, filters tokens to kept networks    |
+| `slim_tokens.py`     | Stage 2 — reduces tokens to max 1 000 by market-cap priority                           |
+| `fix_defaults.py`    | Stage 3 — curates `isDefault` flags and injects 10 missing critical tokens             |
+| `strip_rpcs.py`      | Stage 4 — strips blacklisted RPC URLs (e.g. upstream endpoints with embedded API keys) |
+| `minify.py`          | Generates `chaindata-v9-slim.min.json` (whitespace-stripped)                           |
 
 Run the full pipeline:
 
 ```sh
-python3 scripts/fetch_chaindata.py && python3 scripts/slim_filter.py && python3 scripts/slim_tokens.py && python3 scripts/fix_defaults.py && python3 scripts/minify.py
+python3 scripts/fetch_chaindata.py && python3 scripts/slim_filter.py && python3 scripts/slim_tokens.py && python3 scripts/fix_defaults.py && python3 scripts/strip_rpcs.py && python3 scripts/minify.py
 ```
+
+### RPC blacklist
+
+`strip_rpcs.py` removes any RPC whose URL starts with a prefix in `RPC_BLACKLIST_PREFIXES`. Add a prefix there to permanently drop an endpoint from every pipeline run. Currently blacklisted:
+
+- `wss://bittensor-finney.api.onfinality.io` (upstream URL embeds a third-party OnFinality API key)
 
 The pipeline is idempotent — re-running it from a clean `chaindata-v9.json` always produces the same output.
