@@ -83,18 +83,32 @@ All processing scripts live in `scripts/`:
 
 | Script               | Purpose                                                                                |
 | -------------------- | -------------------------------------------------------------------------------------- |
-| `fetch_chaindata.py` | Stage 0 — downloads the latest `chaindata-v9.json` from upstream                       |
+| `fetch_chaindata.py` | Stage 0 — downloads `chaindata.json` from upstream for the given version               |
 | `slim_filter.py`     | Stage 1 — removes testnets and irrelevant mainnets, filters tokens to kept networks    |
 | `slim_tokens.py`     | Stage 2 — reduces tokens to max 1 000 by market-cap priority                           |
 | `fix_defaults.py`    | Stage 3 — curates `isDefault` flags and injects 10 missing critical tokens             |
 | `strip_rpcs.py`      | Stage 4 — strips blacklisted RPC URLs (e.g. upstream endpoints with embedded API keys) |
-| `minify.py`          | Generates `chaindata-v9-slim.min.json` (whitespace-stripped)                           |
+| `minify.py`          | Stage 5 — minifies `chaindata-slim.json` into `chaindata-slim.min.json`                |
+| `pipeline.py`        | Runs all stages (0–5) with a single version argument                                   |
 
-Run the full pipeline:
+All scripts take a single version argument (e.g. `v11`). Run the full pipeline:
 
 ```sh
-python3 scripts/fetch_chaindata.py && python3 scripts/slim_filter.py && python3 scripts/slim_tokens.py && python3 scripts/fix_defaults.py && python3 scripts/strip_rpcs.py && python3 scripts/minify.py
+python3 scripts/pipeline.py v11
 ```
+
+Or run individual stages separately:
+
+```sh
+python3 scripts/fetch_chaindata.py v11
+python3 scripts/slim_filter.py v11
+python3 scripts/slim_tokens.py v11
+python3 scripts/fix_defaults.py v11
+python3 scripts/strip_rpcs.py v11
+python3 scripts/minify.py v11
+```
+
+The pipeline fetches `chaindata.json` from `https://raw.githubusercontent.com/TalismanSociety/chaindata/main/pub/<version>/chaindata.json`, saves it to `chaindata/<version>/chaindata.json`, produces `chaindata/<version>/chaindata-slim.json` after each slimming stage, and finally writes the whitespace-stripped `chaindata/<version>/chaindata-slim.min.json`.
 
 ### RPC blacklist
 

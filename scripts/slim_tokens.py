@@ -7,12 +7,20 @@ Priority:
   3. Top tokens by CoinGecko market cap rank - fill remaining slots
 """
 
+import argparse
 import json
 import re
+from pathlib import Path
 
-# ============================================================
-# Top ~500 CoinGecko IDs by market cap (April 2026), scraped from coingecko.com
-# ============================================================
+parser = argparse.ArgumentParser(
+    description="Reduce tokens in chaindata-slim.json to max ~1000"
+)
+parser.add_argument("version", help="Chaindata version, e.g. v11")
+args = parser.parse_args()
+
+folder = Path("chaindata") / args.version
+INPUT_FILE = folder / "chaindata-slim.json"
+OUTPUT_FILE = folder / "chaindata-slim.json"
 TOP_COINGECKO_IDS = {
     # Top 100
     "bitcoin", "ethereum", "tether", "xrp", "bnb", "usdc", "solana", "tron",
@@ -149,8 +157,9 @@ TOP_COINGECKO_IDS = {
     "kroma", "starknet", "fraxtal",
 }
 
-INPUT_FILE = 'chaindata/chaindata-v9-slim.json'
-OUTPUT_FILE = 'chaindata/chaindata-v9-slim.json'  # overwrite in-place
+# ============================================================
+# Top ~500 CoinGecko IDs by market cap (April 2026), scraped from coingecko.com
+# ============================================================
 
 with open(INPUT_FILE) as f:
     data = json.load(f)
