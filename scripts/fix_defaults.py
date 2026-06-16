@@ -10,12 +10,21 @@ Update isDefault flags in chaindata-v9-slim.json according to rules:
 6. Ethereum gets popular wrapped tokens including Wrapped SOL
 """
 
+import argparse
 import json
+from pathlib import Path
 
-INPUT = 'chaindata/chaindata-v9-slim.json'
-OUTPUT = 'chaindata/chaindata-v9-slim.json'
+parser = argparse.ArgumentParser(
+    description="Curate isDefault flags in chaindata-slim.json"
+)
+parser.add_argument("version", help="Chaindata version, e.g. v11")
+args = parser.parse_args()
 
-with open(INPUT) as f:
+folder = Path("chaindata") / args.version
+INPUT = folder / "chaindata-slim.json"
+OUTPUT = folder / "chaindata-slim.json"
+
+with INPUT.open(encoding="utf-8") as f:
     data = json.load(f)
 
 networks = data['networks']
@@ -420,7 +429,7 @@ output = {
     'miniMetadatas': data['miniMetadatas'],
 }
 
-with open(OUTPUT, 'w') as f:
+with OUTPUT.open("w", encoding="utf-8") as f:
     json.dump(output, f, indent=2, ensure_ascii=False)
 
 # ============================================================

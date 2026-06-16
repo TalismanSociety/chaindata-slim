@@ -3,12 +3,21 @@
 Download the latest chaindata-v9.json from the TalismanSociety/chaindata repository.
 """
 
+import argparse
 import json
 import os
 import urllib.request
+from pathlib import Path
 
-URL = "https://raw.githubusercontent.com/TalismanSociety/chaindata/main/pub/v9/chaindata.json"
-OUT = "chaindata/chaindata-v9.json"
+parser = argparse.ArgumentParser(
+    description="Download chaindata.json for a given version from upstream"
+)
+parser.add_argument("version", help="Chaindata version to fetch, e.g. v11")
+args = parser.parse_args()
+
+version = args.version
+URL = f"https://raw.githubusercontent.com/TalismanSociety/chaindata/main/pub/{version}/chaindata.json"
+OUT = Path("chaindata") / version / "chaindata.json"
 
 print(f"Fetching {URL} ...")
 with urllib.request.urlopen(URL) as resp:
@@ -17,8 +26,8 @@ with urllib.request.urlopen(URL) as resp:
 # Validate that we got valid JSON
 parsed = json.loads(data)
 
-os.makedirs(os.path.dirname(OUT), exist_ok=True)
-with open(OUT, "w") as f:
+OUT.parent.mkdir(parents=True, exist_ok=True)
+with OUT.open("w", encoding="utf-8") as f:
     json.dump(parsed, f, indent=2)
 
 size_mb = len(data) / (1024 * 1024)

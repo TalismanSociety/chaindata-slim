@@ -6,10 +6,20 @@ Removes: testnets, dead/irrelevant/marginal chains, tokens without coingeckoId,
 PRESERVES: All mainnet Bittensor entries (network, subnets, tokens) regardless of other criteria.
 """
 
+import argparse
 import json
-import sys
+from pathlib import Path
 
-with open('chaindata/chaindata-v9.json') as f:
+parser = argparse.ArgumentParser(
+    description="Filter chaindata.json into chaindata-slim.json"
+)
+parser.add_argument("version", help="Chaindata version, e.g. v11")
+args = parser.parse_args()
+
+folder = Path("chaindata") / args.version
+input_path = folder / "chaindata.json"
+
+with input_path.open(encoding="utf-8") as f:
     data = json.load(f)
 
 networks = data['networks']
@@ -193,8 +203,8 @@ output = {
     'miniMetadatas': kept_minis,
 }
 
-output_path = 'chaindata/chaindata-v9-slim.json'
-with open(output_path, 'w') as f:
+output_path = folder / "chaindata-slim.json"
+with output_path.open("w", encoding="utf-8") as f:
     json.dump(output, f, indent=2, ensure_ascii=False)
 
 # ============================================================
