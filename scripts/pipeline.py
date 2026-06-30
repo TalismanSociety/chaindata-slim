@@ -19,24 +19,26 @@ Stages (run in order):
 import argparse
 import sys
 from pathlib import Path
+import runpy
 
-# Import each stage's main() directly so we don't shell out to subprocesses.
-# We temporarily patch sys.argv before each call so argparse inside each
-# module receives the folder argument.
-
-import importlib
-import importlib.util
+# Run each stage as if invoked via `python3 scripts/<stage>.py <version>`.
+# This ensures scripts with `if __name__ == '__main__'` blocks execute.
 
 
 def run_stage(module_name: str, version: str) -> None:
-    """Import and run a pipeline stage module with the version argument."""
+    """Run a pipeline stage script with the version argument."""
     scripts_dir = Path(__file__).parent
-    spec = importlib.util.spec_from_file_location(module_name, scripts_dir / f"{module_name}.py")
-    mod = importlib.util.module_from_spec(spec)
+    stage_path = scripts_dir / f"{module_name}.py"
     old_argv = sys.argv
     sys.argv = [f"{module_name}.py", version]
     try:
-        spec.loader.exec_module(mod)
+        try:
+            runpy.run_path(str(stage_path), run_name="__main__")
+        except SystemExit as exc:
+            # Many stage scripts end with sys.exit(main()). Treat a zero/None exit
+            # as success so the pipeline can continue to later stages.
+            if exc.code not in (0, None):
+                raise
     finally:
         sys.argv = old_argv
 
